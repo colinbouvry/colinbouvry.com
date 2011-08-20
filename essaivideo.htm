@@ -1,0 +1,234 @@
+<SCRIPT Language='JavaScript'>
+<!--
+
+//-->
+</SCRIPT>
+<html>
+<head>
+<title>AlloCiné Vision : Bandes-annonces</title>
+<style type="text/css">
+
+	.link1		 {color:#0044AA;text-decoration:underline}
+	/* .link1:visited {color:#112288;text-decoration:none} */
+	.link1:hover {color:#D20000;text-decoration:underline}
+
+	.linkpartner		 {color:#0044AA;text-decoration:underline}
+	/* .linkpartner:visited {color:#112288;text-decoration:none} */
+	.linkpartner:hover {color:#D20000;text-decoration:underline}
+
+
+	.link2		 {color:#000000;text-decoration:none}
+	.link2:hover {color:#000000;text-decoration:underline}
+
+	.link3		 {color:#D20000;text-decoration:none}
+	.link3:hover {color:#D20000;text-decoration:underline}
+
+	.link4		 {color:#666666;text-decoration:underline}
+
+	.link5		 {color:#0033BB;text-decoration:none}
+	.link5:hover {color:#D20000;text-decoration:underline}
+
+	.test		 {color:#229922;text-decoration:none}
+
+	ul {margin-left: 0; padding-left: 1em;}
+	li {margin: 0; padding: 0;}
+
+	td, tr, h1, h2, h3, h4, h5 {font-family:arial,geneva;letter-spacing:0;}
+	h1, h2, h3, h4, h5, form {display:inline;}
+
+	h1 {font-size:150%;font-weight:normal;}
+	h2 {font-size:110%;font-weight:normal;}
+	h3 {font-size:89%;font-weight:normal;}
+	h4 {font-size:83%;font-weight:normal;}
+	h5 {font-size:70%;font-weight:normal;line-height: 125%;}
+
+	.bold {font-weight:bold}
+
+	/* ATTENTION A NE PAS UTILISER SAUF CAS EXCEPTIONNEL (pas de tag font) */
+	.text1		 {font-size:75%;font-weight:normal}
+	.text1B		 {font-size:75%;font-weight:bold}
+	.text2		 {font-size:83%;font-weight:normal}
+	.text2B		 {font-size:83%;font-weight:bold}
+	.text3		 {font-size:89%;font-weight:normal}
+	.text3B		 {font-size:89%;font-weight:bold}
+	.text4		 {font-size:110%;font-weight:normal}
+	.text4B		 {font-size:110%;font-weight:bold}
+	.text5		 {font-size:150%;font-weight:normal}
+	.text5B		 {font-size:150%;font-weight:bold}
+
+	hr	{height: 0px; border: solid #CCCCCC 0px; border-top-width: 1px;}
+
+	input.modo {background-color : #FFFFE8; border-color : #000000; border: solid #000000 1px; color : #000000; font-size: 12px; font-family: Arial, Helvetica, sans-serif; margin:1 0 1 0; padding: 0 0 0 0}
+	input.admin {background-color : #FFFFFF; border-color : #000000; border: solid #000000 1px; color : #D20000; font-size: 12px; font-family: Arial, Helvetica, sans-serif; margin:1 0 1 0; padding: 0 0 0 0}
+	input.buttonpost {background-color : #E8E8E8; border-color : #000000; border: solid #000000 1px; color : #000000; font-size: 12px; font-family: Arial, Helvetica, sans-serif;}
+	input.post, textarea.post {background-color : #FFFFFF; border-color : #000000; border: solid #000000 1px; color : #000000;}
+	input.flat, select.flat {vertical-align: middle; color : #000000; font-size: 12px; font-family: Arial, Helvetica, sans-serif; height: 20}
+	input.process {background-color: #FFCC00; vertical-align: middle; color : #000000; font-size: 12px; font-family: Arial, Helvetica, sans-serif; height: 20}
+	input.monallocine {background-color: #A3E7FF; vertical-align: middle; color : #000000; font-size: 12px; font-family: Arial, Helvetica, sans-serif; height: 23}
+
+	img.forum {max-width:500px; width:expression( this.width > 500 ? 500 : true ); }
+	img.galerie {max-width:700px; width:expression( this.width > 700 ? 700 : true ); }
+
+	#video {color: #FFFFFF}
+	#videonav {color: #FFCC00}
+	#videotitre {color: #FFCC00}
+	#videotelecharger {color: #CCCCCC}
+	#videopreferences {color: #FFFFFF}
+	#videopref_titre {color: #FFCC00}
+	#videotailledefaut {color: #CCCCCC}
+	#video_iftitre {color: #FFCC00}
+	#video_ifcasting {color: #FFFFFF}
+	#video_iflink {color: #FFFFFF}
+	#video_iftxtype {color: #AAAAAA}
+	BODY
+		{
+		scrollbar-3d-light-color: #84888E;
+		scrollbar-arrow-color: #FFCC00;
+		scrollbar-base-color: #4D545E;
+		scrollbar-face-color: #4D545E;
+		scrollbar-highlight-color: #84888E;
+		scrollbar-shadow-color: #444444
+		color: #4D545E
+		}
+</style>
+<script language="javascript">
+
+
+	function GoFullScreen(player) {
+		if (player=='ASF') {
+				alert('Pour sortir du mode Plein Ecran, pressez la touche ECHAP.'); 
+				document.myPlayer.fullScreen = 'true';
+		} else {
+				alert('Pour sortir du mode Plein Ecran, pressez la touche ECHAP.'); 
+				document.myPlayer.SetFullScreen();
+		}
+	}
+
+	var StopLoop = 1;
+	var StopLoopVideo = 1;
+
+	function resizeIframe() {
+		frheight=(document.documentElement.offsetHeight) - 124;
+		if (document.documentElement.offsetHeight < 480) {frheight=356};
+		document.getElementById("FRAME_ID").style.height=(frheight+"px");
+		document.getElementById("FRAMEDIV_ID").style.height=(frheight+"px");
+		document.getElementById("FRAMEDIV_ID").style.display="block";
+	}
+	function resizeIframeLoop() {
+		resizeIframe();
+		if ((navigator.appName != "Microsoft Internet Explorer") && (StopLoop < 10000)) { window.setTimeout('resizeIframeLoop()', 1); StopLoop += 1}
+		if (StopLoop >= 10000) {StopLoop = 1}
+	}
+
+	// 625 x 499 = taille par defaut de la fenetre
+	// 320 x 288 = taille par defaut du player wmedia
+	// 320 x 224 = taille par defaut du player real
+
+	function resizeVideo() {
+		vwidth=(document.documentElement.offsetWidth) - 609 + 320;
+		if (document.documentElement.offsetWidth < 609) {vwidth=320};
+		document.myPlayer.width=(vwidth+"px");
+		//document.getElementById("myPlayerDiv").style.width=(vwidth+"px");
+
+		vheight=(document.documentElement.offsetHeight) - 499 + 288;
+		if (document.documentElement.offsetHeight < 499) {vheight=288};
+		document.getElementById("myPlayer").style.height=(vheight+"px");
+		//document.getElementById("myPlayerDiv").style.height=(vheight+"px");
+
+		//document.getElementById("myPlayerDiv").style.display="block";
+	}
+
+	function resizeVideoLoop() {
+		resizeVideo();
+		if ((navigator.appName != "Microsoft Internet Explorer") && (StopLoop < 10000)) { window.setTimeout('resizeVideoLoop()', 1000); StopLoopVideo += 1}
+		if (StopLoopVideo >= 10000) {StopLoopVideo = 1}
+	}
+
+</script>
+</head>
+<body topmargin="0" marginheight="0" leftmargin="0" marginwidth="0" bgcolor="#333943" onload="window.focus(); resizeIframeLoop(); resizeVideoLoop();" onresize="if (navigator.appName == 'Microsoft Internet Explorer') {resizeIframe(); resizeVideo();}">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#000000">
+<tr>
+<td>
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td width="212" height="26" bgcolor="#4D545E" style="padding: 0 0 0 8">
+			<h5><br />
+		    <img border="0" src="http://a69.g.akamai.net/n/69/10688/v1/img5.allocine.fr/acmedia/skin/empty.gif" width="212" height="1" /></h5></td>
+		<td height="26" bgcolor="#333943" style="padding: 0 0 0 32" nowrap="nowrap"><a href="#" onclick="javascript:window.resizeTo(615,520);" class="link4"><h4 id="videotailledefaut"><< Taille par défaut</h4></a></td>
+	</tr>
+	</table>
+</td>
+<td valign="bottom" align="left" width="26">&nbsp;</td>
+<td align="center" style="padding: 5 5 5 5" width="210">&nbsp;</td>
+</tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="220" bgcolor="#4D545E" valign="top">	<img border="0" src="http://a69.g.akamai.net/n/69/10688/v1/img5.allocine.fr/acmedia/skin/empty.gif" width="220" height="1" /><br />
+	<div id="FRAMEDIV_ID" style="width:220;height:100%;display:none;">
+	<iframe id="FRAME_ID" name="FRAME_ID" allowtransparency="true" scrolling="auto" frameborder="0" src="film.html?cfilm=52406&cvid=18375264&emission=" width="220"></iframe>
+	</div>
+</td>
+<td align="center" valign="top">
+<table cellpadding="0" cellspacing="0" border="0" width="100%"><tr>
+<td align="left" style="padding: 10 0 5 32"><a href="#" onclick="GoFullScreen('ASF')" class="link4"><h4 id="videotailledefaut">>> Plein écran</h4></a></td>
+</tr></table>
+
+	<div id="myPlayerDiv" name="myPlayerDiv" style="padding: 0 32 0 32">
+<OBJECT ID="myPlayer" Name="myPlayer" " width="320" height="288">
+    <PARAM NAME="uiMode" VALUE="full">
+    <PARAM NAME="autoStart" VALUE="true">
+	<param name="stretchToFit" value="true">
+	<PARAM name="URL" value="MillMells.asx">
+	<EMBED type="video/x-ms-asf-plugin" pluginspage="http://www.microsoft.com/Windows/Downloads/Contents/Products/MediaPlayer/" src="http://www.allocine.fr/_video/generation.asx?id=20282033&d=H&refpays=wwwfr&ARG140=Q2005021220282028259126430&p=30002&f=18404998" name="myPlayer" id="myPlayer" autostart="1" showcontrols="1" animationatstart="0" transparentatstart="1" AllowChangeDisplaySize="1" enableContextMenu="1" width="320" height="288" ShowStatusBar="1">
+</OBJECT>
+	</div>
+	<div style="padding: 10 15 0 15">
+
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td colspan="2" align="center"><h3 id="videotitre"><b>Iznogoud : Bande-annonce</b></h3></td></tr>
+	<tr>
+	</tr></table>
+	</div>
+</td>
+</tr>
+</table>
+
+<SCRIPT Language='JavaScript' Src='http://statsearch.allocine.fr/stat_search.asp?TypeStat=7&Valeur=18375264'></SCRIPT>
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#000000">
+<tr>
+<td height="45" style="padding: 0 0 0 2">
+	<form action="/webtv/preferences/WritePref.inc" method="get" name="preferences">
+	<input type="hidden" name="cvid" value="18375264" />
+	<input type="hidden" name="nopub" value="1" />
+	<table cellpadding="0" cellspacing="0" border="0" width="100%"><tr>
+	<td style="padding: 0 0 0 8;" width="120">
+		<h4 id="videopref_titre"><b>Votre lecteur :</b></h4><br /><h4 id="videopref_titre"><b>Votre connexion :</b></h4></td>
+
+	<td style="padding: 0 0 0 2;">
+		<h5 id="videopreferences"><input type="radio" name="player" value="ASF"
+ checked 
+/>Windows Média <a href="http://www.microsoft.com/windows/windowsmedia/fr/default.aspx" id="videotelecharger" class="link4" target="_blank">(installer)</a>
+		<input type="radio" name="player" value="RG2"
+/>Real Player <a href="http://forms.real.com/netzip/intl/intl_getrde601.html?lang=fr&h=software-dl.real.com&f=windows/RealPlayer10-5GOLD_fr.exe&p=RealPlayer&oem=rd_fr&src=ZG.fr.r1p.r1p.760.r1pp_r1pb&tagtype=ie&type=rd_fr" id="videotelecharger" class="link4" target="_blank">(installer)</a>
+		<input type="radio" name="player" value="QT"
+/>Quicktime <a href="http://www.apple.com/fr/quicktime/download/" id="videotelecharger" class="link4" target="_blank">(installer)</a></h5>
+		<br />
+		<h5 id="videopreferences"><input type="radio" name="debit" value="H"
+ checked 
+/>Haut Débit <span id="videotelecharger">(ADSL, Câble)</span>
+
+		<input type="radio" name="debit" value="B"
+/>Bas Débit <span id="videotelecharger">(Modem, Numéris)</span></h5>
+	</td>
+	<td style="padding: 0 5 0 0"><input type="submit" value="Modifier" class="flat" /></td>
+	</tr></table>
+	</form>
+</td>
+</tr>
+</table>
+</body>
+</html>

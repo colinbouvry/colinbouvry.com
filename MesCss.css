@@ -1,0 +1,242 @@
+/* CSS issu des tutoriels www.alsacreations.com/articles */
+body {
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size: 0.8em;
+margin: 0;
+padding: 0;
+}
+#header {
+height: 70px;
+background-color:#FFFFFF;
+}
+#haut {
+height: 4px;
+background-color:#31BDEA;
+}
+#conteneur {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color:#FFFFFF;
+	left: 0px;
+}
+#centre {
+/*background-color:#9999CC;*/
+margin-left: 50px;
+margin-right: 28%;
+}
+#centre2 {
+/*background-color:#9999CC;*/
+margin-left: 20%;
+margin-right: 20%;
+}
+
+#centre100% {
+/*background-color:#9999CC;*/
+margin-left: 10px;
+}
+#droite {
+	position:absolute;
+	width: 20%;
+	right:20px;
+	top: 180px;
+	
+	
+	border-width:thin;
+	border-color:#31BDEA;
+	border-style:solid;
+	-moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+
+}
+.alignement {
+margin-left:10px;
+margin-right:10px;
+}
+#pied {
+height: 20px;
+background-color:#31BDEA;
+
+}
+/*********************************/
+/* Menu horizontal (items flottants) */
+/*********************************/
+#nav {
+
+	list-style: none ;
+	margin: 0px;
+	margin-left:250px;
+	padding: 0 ;
+	overflow: hidden ;	/* CrÃ©ation du contexte de formatage */	
+	
+	}
+#nav li {
+	float:left;
+	width: 100px ;
+	margin-right: 5px ;
+	margin-top: 3px;
+	color: #fff ;
+	}
+#nav li a {
+	display: block ;
+	background: #888 ;
+	color: #fff ;
+	font: 1em "Trebuchet MS",Arial,sans-serif ;
+	line-height: 1em ;
+	padding: 4px 0 ;
+	text-align: center ;
+	text-decoration: none ;
+	border: 1px solid #CCC ;
+	-moz-border-radius: 10px 10px 10px 10px; 
+    -webkit-border-radius: 10px 10px 10px 10px; 
+    border-radius: 10px 10px 10px 10px;         
+    -webkit-border-top-left-radius: 10px; /* pour Chrome */ 
+    -webkit-border-top-right-radius: 10px; /* pour Chrome */
+	-webkit-border-bottom-left-radius: 10px; /* pour Chrome */ 
+    -webkit-border-bottom-right-radius: 10px; /* pour Chrome */
+	}
+#nav li a:visited {
+}
+#nav li a:link {
+}
+#nav li a:active {
+text-decoration:underline;
+}
+#nav li a:hover, #nav li a:focus{
+	background: #999 ;
+}
+#nav li a:link.active, #nav li a:visited.active{
+	background: #CCC ;
+	color:#333;
+	font-weight:bold;
+}
+
+
+p {margin: 0 0 10px 0;}
+
+.cadredroit {
+width: 200 px;
+background-color:#66FFFF;
+right:20 px;
+}
+
+.NomEntête {
+	font-size: x-large;
+	font-weight: bold;
+	color: #31BDEA;
+	margin-left: 1px;
+}
+
+/* Polices */
+.NomPage {color:#0099FF; font-size: 1.5em; }
+.TexteNoir {font-size: 1.2em;
+	color:#333;
+}
+.SousTitreNoir {font-size: 1.2em; font-weight: bold; }
+.TitreBleu {
+	color: #31BDEA;
+	font-size: medium;
+	font-weight: bold;
+}
+
+/* cadre arrondi */
+#CadreArrondi { /* taille du cadre, à titre d'exemple */
+background-color: #909090;
+width:220px;
+margin-left: auto; 
+margin-right: auto;
+margin-top:100px;
+}
+/* propriétés communes à l'ensemble des 4 coins */
+#hautgauche, #hautdroit, #basgauche, #basdroit {
+height: 19px; width: 19px;
+background-repeat: no-repeat;
+font-size:1px; /* correction d'un bug IE */
+}
+/* propriétés spécifiques à chaque coin */
+#hautgauche {
+background: url(images/hautgauche.gif);
+}
+#hautdroit {
+float: right;
+background: url(images/hautdroit.gif);
+}
+#basgauche {
+background: url(images/basgauche.gif);
+}
+#basdroit {
+float: right;
+background: url(images/basdroit.gif);
+}
+#contenu p {
+color: white;
+margin: 0.5em; /*gestion des espaces interparagraphes */
+}
+
+/*Image*/
+img{ 
+	border:none;
+}	
+/* Infobulle */
+
+#bulle { 
+	position: absolute;
+	visibility: hidden;
+	font-size:12px;
+}
+.info{ 
+	border:1px solid #666666;
+	padding: 7px; color:#666666;
+	background-color:#FFFFFF;
+	font-family:"trebuchet MS";
+	
+	opacity:.95;
+	filter: alpha(opacity=95); 
+	-moz-opacity: 0.95;
+}
+
+/*ESpace */
+div.spacer{
+	clear: both;
+}
+
+#cadrenew{
+width:100%;
+height:100px;
+background-color:#EAF4FF;
+}
+#cadrenew p{
+padding-left:4px;
+padding-top:4px;
+}
+
+#contenuTravaux {
+padding-left:O;
+}
+/*================== TRAVAUX ==================== */ 
+#travaux {width:500px;background:#FFF;}
+#travaux li {float:left; list-style:none}
+#travaux ul {padding-left:1px}
+#travaux li img {width:80px;height:80px;}
+#travaux li a:link {float:left; border:3px solid #FFF;line-height:3px;padding:0;}
+#travaux li a:visited {float:left; border:3px solid #FFF;line-height:3px;padding:0}
+#travaux li a:hover {float:left; border:3px solid #6699FF;line-height:3px;padding:0;cursor: help;}
+#travaux li a:active {float:left; border:3px solid #6699FF;line-height:3px;padding:0}
+#travaux li a:link.active, #travaux li a:visited.active{float:left; border:3px solid #6699FF;line-height:3px;padding:0}
+
+/*================== TRAVAUX ==================== */ 
+#menutravaux {width:600px;background:#FFF;}
+#menutravaux li {float:left; list-style:none}
+#menutravaux ul {padding-left:1px}
+#menutravaux li img {width:35px;height:35px;}
+#menutravaux li a:link {float:left; border:3px solid #FFF;line-height:3px;padding:0;}
+#menutravaux li a:visited {float:left; border:3px solid #FFF;line-height:3px;padding:0}
+#menutravaux li a:hover {float:left; border:3px solid #6699FF;line-height:3px;padding:0;cursor: help;}
+#menutravaux li a:active {float:left; border:3px solid #6699FF;line-height:3px;padding:0}
+#menutravaux li a:link.active, #menutravaux li a:visited.active{float:left; border:3px solid #6699FF;line-height:3px;padding:0}
+
+
+
+.date {padding:0px; text-align:left; color:#333; font-size: 1.2em; font-weight: bold;}
+
